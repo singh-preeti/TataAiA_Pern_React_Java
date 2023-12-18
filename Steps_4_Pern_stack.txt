@@ -1,0 +1,25 @@
+Step 1: create a folder PERN_TODO and make a directory Server
+Step 2: npm init
+Step 3: npm i express pg cors // to create the server in nodejs 
+Step 4: Create index.js write the code
+Step 5: node index // it will start the server
+Step 6: nodemon can be used to load the changes 
+Step 7: npm install nodemon --save  or npm install -g --force nodemon // in case nodemon is not installed
+Step 8: Create middleware code
+
+Step 9: Create database and table 
+Step 10: Postgres password : P@ssword@123
+Step 11: \l -> list all db in postgresql,\c-> move inside a db, \dt-> show table in db
+Step 12: Create database perntodo;
+Step 13: Create table todo()
+Step 14: Create a "database.sql"
+Step 15: open cmd prompt and type command "psql -U postgres" // where postgres is super user which has all the permissions
+Step 16: cmd -> \l 
+Step 17: create db and do \c to move in -> cmd \c perntodo 
+Step 18: Create table \dt 
+Step 19: Create new js file "db.js" to connect our db
+Step 20: Create Pool module, export it and import in the index.js
+Step 21: Create CRUD 
+Step 22: Open Postman and test Post request with api "localhost:5000/todos
+
+
