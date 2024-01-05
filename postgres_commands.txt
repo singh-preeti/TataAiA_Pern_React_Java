@@ -1,0 +1,65 @@
+--  To create the Role as superuser
+CREATE ROLE User1
+SUPERUSER 
+LOGIN 
+PASSWORD 'password';
+
+--  View all roles 
+SELECT rolname FROM pg_roles;
+
+-- create roles that have the database creation privilege, you use the CREATEDB attribute:
+
+CREATE ROLE dba 
+CREATEDB 
+LOGIN 
+PASSWORD 'Abcd1234';
+
+-- To create role only for login
+
+CREATE ROLE roshan
+LOGIN 
+PASSWORD 'mypassword1';
+
+-- Create roles with validity period
+CREATE ROLE dev_api WITH
+LOGIN
+PASSWORD 'securePass1'
+VALID UNTIL '2030-01-01';
+
+-- Create roles with connection limit
+CREATE ROLE api
+LOGIN
+PASSWORD 'securePass1'
+CONNECTION LIMIT 1000;
+
+CREATE USER preeti WITH PASSWORD 'password';
+
+-- privilege − values could be: SELECT, INSERT, UPDATE, DELETE, RULE, ALL.
+GRANT ALL ON COMPANY TO preeti;
+
+REVOKE ALL ON COMPANY FROM preeti;
+
+DROP USER preeti;
+
+
+CREATE TABLE COMPANY(
+   ID INT PRIMARY KEY     NOT NULL,
+   NAME           TEXT    NOT NULL,
+   AGE            INT     NOT NULL,
+   ADDRESS        CHAR(50),
+   SALARY         REAL,
+   JOIN_DATE	  DATE
+);
+
+
+INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY,JOIN_DATE) VALUES 
+(1, 'Paul', 32, 'California', 20000.00,'2001-07-13');
+
+INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (8, 'Paul', 32, 'California', 20000.00 );
+
+INSERT INTO COMPANY (ID,NAME,AGE,ADDRESS,SALARY)
+VALUES (9, 'Allen', 25, 'Texas', 15000.00 );
+
+
+SELECT DISTINCT name FROM COMPANY;
